@@ -3,8 +3,10 @@ const router = express.Router();
 
 
 router.get('/', function(req, res){
+  console.log(req.session);
   res.render('index', {
-    title: "connected!"
+    title: "connected!",
+    user: req.session.user
   })
 })
 

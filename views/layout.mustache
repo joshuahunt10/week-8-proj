@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/css/master.css">
     <meta charset="utf-8">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/master.css">
   </head>
   <body>
-    <h1>This is from the layour</h1>
-
+    <div class="top_bar">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/snipdash">Make a new snip</a>
+        {{#user}}
+        <a href="/fixme">Hello {{user}}</a>
+        <form class="" action="/logout" method="post">
+          <button type="submit" name="button">Logout</button>
+        </form>
+        {{/user}}
+        {{^user}}
+        <a href="/login">Login</a>
+        <a href="/register">Sign Up</a>
+        {{/user}}
+      </nav>
+      <div class="title">
+        <h1>Code Snips</h1>
+      </div>
+    </div>
 
     {{{yield}}}
 

@@ -1,7 +1,94 @@
+body{
+  background-color: #2ecc71;
+  margin: 0px;
+}
+
 h1{
-  color: blue;
+  color:#f39c12;
+}
+
+.top_bar{
+  background-color: #2980b9;
+}
+
+.top_bar nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 2%;
+}
+
+.top_bar nav a:link{
+  color:yellow;
+}
+
+.title{
+  text-align: center;
 }
 
 h2{
-  color: green;
+  text-align: center;
+  color:#34495e;
+}
+
+.login_wrapper{
+  text-align: center;
+}
+
+.form_wrapper{
+  text-align: center;
+  margin: 5% 40%;
+  background-color: #ecf0f1;
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  padding:5%;
+}
+
+.body-wrapper{
+  display: flex;
+  justify-content: space-around;
+}
+
+.new_card form{
+  display: flex;
+  flex-direction: column;
+}
+
+.new_deck form{
+  display: flex;
+  flex-direction: column;
+}
+
+.body-wrapper div{
+  border: 1px solid black;
+  flex-basis:25%;
+}
+
+.new_card, .new_deck{
+  padding: 0 2%;
+}
+
+.cardLayout-wrapper{
+  background-color: #ecf0f1;
+  display: flex;
+  margin: 2% 20%;
+  flex-direction: column;
+}
+.card{
+  margin: 2% 7%;
+}
+.card div{
+  margin:4% 0%;
+}
+
+.sub-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.test-butt{
+  text-align: center;
 }
