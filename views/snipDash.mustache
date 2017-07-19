@@ -1,1 +1,46 @@
-<h2>This should be behind a login wall</h2>
+<div class="body-wrapper">
+  <div class="new_deck">
+    <h2>Create a New Snip!</h2>
+    <form class="new_deck_form" action="/snipadd" method="post">
+      <label for="title">Snip Title</label>
+      <input type="text" name="title" value="" placeholder="New Snip Title">
+
+      <label for="snippet">Snippet</label>
+      <textarea name="snippet" rows="8" cols="50"></textarea>
+
+      <label for="lang">Language</label>
+      <input type="text" name="lang" value="">
+
+      <label for="tags">Tags</label>
+      <input type="text" name="tags" value="">
+
+      <button type="submit" name="button">New Snip!</button>
+    </form>
+  </div>
+  <div class="new_card">
+    <h2>Add a card for a decks</h2>
+    <h4>{{confirm}}</h4>
+    <form class="new_card_form" action="/card/deck/new" method="post">
+      <label for="deck">What deck?</label>
+        <select class="" name="deck">
+          <option value=""> </option>
+          {{#decks}}
+          <option value="{{id}}">{{name}}</option>
+          {{/decks}}
+        </select>
+      <label for="question">Question:</label>
+      <textarea name="question" rows="5" cols="40"></textarea>
+      <label for="answer">Answer:</label>
+      <textarea name="answer" rows="5" cols="40"></textarea>
+      <button type="submit" name="button">Add a Card!</button>
+    </form>
+  </div>
+  <div class="show_decks">
+    <h2>You have {{decksLen}} snips</h2>
+    <ul>
+      {{#decks}}
+      <li><a href="/card/deck/show/{{id}}"><h3>{{name}}</h3></a></li>
+      {{/decks}}
+    </ul>
+  </div>
+</div>
