@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   password: {type: String, required: true},
   snips: [{
     id: {type: String},
-    lang: {type: String}
+    title: {type: String}
   }]
 })
 

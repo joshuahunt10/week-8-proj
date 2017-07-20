@@ -36,11 +36,11 @@
     </form>
   </div>
   <div class="show_decks">
-    <h2>You have {{decksLen}} snips</h2>
+    <h2>You have {{snips.length}} snips</h2>
     <ul>
-      {{#decks}}
-      <li><a href="/card/deck/show/{{id}}"><h3>{{name}}</h3></a></li>
-      {{/decks}}
+      {{#snips}}
+      <li><a href="/snip/show/{{id}}"><h3>{{title}}</h3></a></li>
+      {{/snips}}
     </ul>
   </div>
 </div>

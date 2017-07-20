@@ -1,5 +1,4 @@
-// TODO: Start working on the snips.  The login, registration, logout, and login wall are in place.
-// TODO: long term goals include doing the API and the tests.
+// TODO: see snips for specific language, see a list of snips for a specific tag, create the API, do tests
 
 const express = require("express");
 const mustache = require("mustache-express");
