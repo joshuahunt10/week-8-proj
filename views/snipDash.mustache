@@ -20,18 +20,19 @@
   <div class="new_card">
     <h2>Add a card for a decks</h2>
     <h4>{{confirm}}</h4>
-    <form class="new_card_form" action="/card/deck/new" method="post">
-      <label for="deck">What deck?</label>
-        <select class="" name="deck">
+    <form class="new_card_form" action="/snipsearch" method="post">
+      <label for="searchCriteria">Search Criteria</label>
+        <select class="" name="searchCriteria">
           <option value=""> </option>
-          {{#decks}}
-          <option value="{{id}}">{{name}}</option>
-          {{/decks}}
+
+          <option value="title">Title</option>
+          <option value="language">Language</option>
+          <option value="tag">Tag</option>
+
         </select>
-      <label for="question">Question:</label>
-      <textarea name="question" rows="5" cols="40"></textarea>
-      <label for="answer">Answer:</label>
-      <textarea name="answer" rows="5" cols="40"></textarea>
+      <label for="search">Search:</label>
+      <textarea name="search" rows="5" cols="40"></textarea>
+
       <button type="submit" name="button">Add a Card!</button>
     </form>
   </div>

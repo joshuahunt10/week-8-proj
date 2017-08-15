@@ -18,7 +18,7 @@ router.get('/snipdash', function(req, res){
 router.post('/snipadd', function(req, res){
   var snip = new Snip()
   snip.title = req.body.title
-  snip.snippet = encodeURI(req.body.snippet)
+  snip.snippet = req.body.snippet
   snip.language = req.body.lang
   let tags = req.body.tags
   let arr = tags.split(",")
@@ -43,8 +43,38 @@ router.get('/snip/show/:snipID', function(req, res){
   Snip.findOne({'_id': req.params.snipID})
   .then(function(snip){
     console.log(snip);
-    let uncodeSnip = decodeURI(snip.snippet)
+    let uncodeSnip = snip.snippet
     res.render('snipShow', {
+      title: 'Display Snip',
+      snip: snip,
+      uncodeSnip: uncodeSnip
+    })
+  })
+})
+
+function search(searchCriteria, searchText){
+  if(searchCriteria === 'tag'){
+    console.log('in the if')
+    return Snip.find({'tags': searchText})
+  }else{
+    console.log('in the else')
+
+    const searchObject = {}
+    searchObject[searchCriteria] = searchText
+    searchObject[searchCriteria] = searchText
+    console.log(searchObject);
+    return Snip.find(searchObject)
+  }
+}
+
+
+router.post('/snipsearch', function(req, res){
+  const searchCriteria = req.body.searchCriteria
+
+  search(searchCriteria, req.body.search).then(function(snip){
+    console.log(snip);
+    let uncodeSnip = snip.snippet
+    res.render('snipShowSearch', {
       title: 'Display Snip',
       snip: snip,
       uncodeSnip: uncodeSnip

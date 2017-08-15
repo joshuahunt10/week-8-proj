@@ -33,7 +33,7 @@ router.post('/auth', function(req, res){
       console.log('login success');
       req.session.user = l.username
       req.session.userID = l._id
-      res.redirect('/')
+      res.redirect('/snipdash')
     } else{
       res.send('inside the else statement')
     }

@@ -1,4 +1,4 @@
-// TODO: see snips for specific language, see a list of snips for a specific tag, create the API, do tests
+// TODO: create the API, do tests
 
 const express = require("express");
 const mustache = require("mustache-express");
@@ -56,5 +56,5 @@ app.use(function(req, res, next){
 app.use(snipsRoutes);
 
 app.listen(3000, function(){
-  console.log('I am over this and want to move on...');
+  console.log('Snip snip snip');
 })
